@@ -5,14 +5,16 @@ Rectangle {
     Layout.fillWidth: true
     Layout.fillHeight: true
     property string content: "Header"
-    color: "Transparent"
+    color: "white"
 
     Text {
-        anchors.leftMargin: 54
+        width: parent.width
+        anchors.left: parent.left
+        anchors.leftMargin: 16
         anchors.verticalCenter: parent.verticalCenter
-        font.family: "Times New Roman"
+        font.family: "Segoe UI"
         text: content
-        font.pixelSize: 20
+        font.pixelSize: 16
     }
 
 }

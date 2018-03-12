@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.3
 
 Rectangle {
     property string value: "4"
+    property string icon: ""
 
     //width: 87.12
     Layout.fillWidth: true
@@ -21,8 +22,15 @@ Rectangle {
     Text {
         text: value
         anchors.centerIn: parent
-        font.pixelSize: 24
+        font.pixelSize: 16
         color: "white"
+        visible: icon == "" ? true: false
+    }
+
+    Image {
+        source: icon
+        anchors.centerIn: parent
+        visible: icon != "" ? true: false
     }
 
     MouseArea {
