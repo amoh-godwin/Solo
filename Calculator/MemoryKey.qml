@@ -8,6 +8,7 @@ Rectangle {
     signal hover(); signal click()
 
     property string value: "MC"
+    property string icon: ""
 
     onHover: {
         color = "#1a1a1a"
@@ -22,6 +23,13 @@ Rectangle {
         anchors.centerIn: parent
         font.pixelSize: 12
         color: "white"
+        visible: icon == "" ? true: false
+    }
+
+    Image {
+        visible: icon != "" ? true: false
+        anchors.fill: parent
+        source: icon
     }
 
     MouseArea {

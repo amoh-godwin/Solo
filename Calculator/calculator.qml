@@ -9,7 +9,7 @@ ApplicationWindow {
     title: qsTr("Calculator")
     width: 1024
     height: 700
-    color: "snow"
+    color: "white"
 
 
     RowLayout {
@@ -18,11 +18,12 @@ ApplicationWindow {
        spacing: 0
 
        ColumnLayout {
-           width: parent.width - 276
+           width: parent.width - 277
            height: parent.height
            spacing: 0
 
            ColumnLayout {
+               id: screenParent
                width: parent.width
                height: parent.height / 100 * 33
                spacing: 0
@@ -40,39 +41,48 @@ ApplicationWindow {
                }
 
                Rectangle {
-                   width: parent.width
+                   Layout.fillWidth: true
                    height: parent.height - 96
                    color: "white"
+                   Text {
+                       anchors.verticalCenter: parent.verticalCenter
+                       anchors.right: parent.right
+                       anchors.rightMargin: 16
+                       textFormat: Text.RichText
+                       text: ""
+                       font.pixelSize: 16
+                   }
                }
 
-               RowLayout {
-                   width: parent.width
+               Rectangle {
+                   Layout.fillWidth: true
                    height: 48
-                   spacing: 0
+                   color: "#4a4a4a"
 
-                   MemoryKey {
-                       value: "Deg"
+                   RowLayout {
+                       //width: parent.width
+                       height: 48
+                       spacing: 0
+
+                       MemoryKey {
+                           value: "Deg"
+                       }
+
+                       MemoryKey {
+                           value: "HYP"
+                       }
+
+                       MemoryKey {
+                           value: "F-E"
+                       }
                    }
 
-                   MemoryKey {
-                       value: "HYP"
-                   }
-
-                   MemoryKey {
-                       value: "F-E"
-                   }
                }
 
            }
 
            Rectangle {
-               width: parent.width
-               height: 1
-               color: "#e1e1e1"
-           }
-
-           Rectangle {
-               width: parent.width
+               Layout.fillWidth: true
                height: parent.height / 100 * 67
                color: "#4a4a4a"
 
@@ -121,6 +131,7 @@ ApplicationWindow {
 
                            CalculatorKey {
                                value: "^2"
+                               icon: "icons/square.png"
                            }
 
                            CalculatorKey {
@@ -201,6 +212,10 @@ ApplicationWindow {
 
                            CalculatorKey {
                                value: "*"
+                               icon: "icons/sigma_white.png"
+                               onClick: {
+                                   screen.text = 'love'
+                               }
                            }
 
                            CalculatorKey {
