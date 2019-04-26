@@ -1,0 +1,5 @@
+# PyCache
+/__pycache__
+*/__pycache__
+*/*/__pycache__
+Exercise Files/*/*/__pycache__
